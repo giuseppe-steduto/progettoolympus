@@ -1,0 +1,28 @@
+{
+	"short_name": "Appunti",
+	"name": "Appunti - 5Ai",
+	"icons": [{
+			"src": "res/logo512.png",
+			"type": "image/png",
+			"sizes": "512x512"},
+		{
+			"src": "res/logo256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "res/logo128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "res/logo32.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		}],
+	"start_url": "/index.php",
+	"background_color": "dodgerblue",
+	"display": "standalone",
+	"theme_color": "dodgerblue",
+	"gcm_sender_id": "8751899160"
+}

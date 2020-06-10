@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="dodgerblue">
+        <meta content="8751899160-bmc7qpi981l19htokhlq8pdoc8g39b7g.apps.googleusercontent.com"
+              name="google-signin-client_id">
+        <!--Meta tag per iOS-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta name="apple-mobile-web-app-title" content="MIIDM App">
+        <link rel="apple-touch-icon" href="res/logo.png">
+        <link rel = "manifest" href = "manifest.json" />
+        <link rel="icon" href="res/logo32.png" />
+        <!--TODO Aggiungere splash screen per iOS-->
+        <title>Login - appunti 5Ai</title>
+        <link rel = "stylesheet" href = "style/login.css" />
+        <script src = "script/login.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+        <center>
+            <h1>Banca dati - appunti 5Ai<br /><strong>Login</strong></h1>
+            <form action = "logincheck.php" method = "post">
+                <input id="email" name="email" placeholder="Email" required type="email"/><br />
+                <input id="password" name="password" placeholder="Password" required type="password"/><br />
+                <input type = "submit" value = "Login!" />
+            </form>
+            <br />
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <br />
+            <a href = "#" onclick = "inviaRichiestaChangePassword()">Non ricordi la tua password?</a>
+        </center>
+        <footer>
+            Website developed by Giuseppe Steduto
+        </footer>
+    </body>
+</html>
