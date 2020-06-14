@@ -1,0 +1,90 @@
+@import "base.css";
+
+h1#titoloProgetto {
+    margin-top: 6rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--colore-tema);
+    text-align: center;
+}
+
+div#containerSettori {
+    display: flex;
+    width: 80%;
+    max-width: 80%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+section.settore {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border-radius: 15px;
+}
+section.settore:hover {
+    box-shadow: #ccc 3px 3px 3px;
+    border: 1px solid black;
+}
+
+section.settore p:first-of-type {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+section.settore p:last-of-type {
+    color: #999;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    transition: all 0.25s ease;
+}
+section.settore:hover p:last-of-type {color: black;}
+
+div.logoSettoreContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+div.logoSettoreContainer img {
+    width: 50%;
+    height: auto;
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    div#containerSettori {
+        flex-direction: column;
+    }
+    section.settore {
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    section.settore p:last-of-type {
+        display: none;
+    }
+    div.logoSettoreContainer {
+        width: auto;
+        padding: 0;
+        height: 3rem;
+    }
+    div.logoSettoreContainer img {
+        height: 100%;
+        width: auto;
+    }
+    section.settore p:first-of-type {
+        padding-right: 1rem;
+    }
+}

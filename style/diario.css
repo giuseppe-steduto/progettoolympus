@@ -1,0 +1,181 @@
+@import "base.css";
+
+h1, h3 {
+    color: var(--colore-tema-hermes);
+    text-align: center;
+}
+
+h3:last-of-type {margin-top: 2em;}
+
+table:nth-of-type(2) td { /*Tabella dei compiti fatti*/
+    color: var(--colore-disabilitato);
+    text-decoration: line-through;
+}
+
+table:first-of-type span.material-icons {
+    cursor: pointer;
+    color: var(--verde);
+}
+
+table:nth-of-type(2) span.material-icons {
+    cursor: pointer;
+    color: var(--rosso);
+}
+
+tr.compitoFatto td {
+    color: #777777;
+    text-decoration: line-through;
+}
+
+td.compitoInRitardo {
+    color: var(--rosso);
+    font-weight: bold;
+}
+
+tr.compitoNonFatto td{
+    color: var(--colore-testo) !important;
+    text-decoration: none !important;
+}
+
+tr.compitoFatto td:last-child span, tr.compitoNonFatto td:last-child span {
+    color: var(--colore-disabilitato);
+}
+
+#bottoneAggiungiAppunto {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 4rem;
+    color: var(--colore-tema-hermes);
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+    z-index: 5;
+    cursor: pointer;
+}
+
+#modalInserimento {
+    transform: scale(0);
+    width: 30%;
+    z-index: 5;
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    transition: all 0.5s;
+    background-color: var(--colore-elemento-sopraelevato);
+    border-radius: 10px;
+    padding: 2rem 3rem 2rem 3rem;
+    border: 1px solid var(--colore-tema-hermes);
+    box-sizing: border-box;
+}
+#modalInserimento form {
+    background-color: transparent;
+}
+
+#modalInserimento input:not([type="checkbox"]), #modalInserimento textarea, #modalInserimento select {
+    width: 100%;
+    font-size: 1rem;
+    font-family: "Open Sans";
+    border: 1px solid var(--colore-bordo);
+    outline: none;
+    margin-bottom: 1.5rem;
+}
+
+#modalInserimento input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    color: var(--colore-sfondo);
+    background-color: var(--colore-tema-hermes);
+    padding: 1rem;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#modalInserimento input[type="submit"]:hover {
+    background-color: var(--verde);
+}
+
+#modalInserimento label {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--colore-tema-hermes);
+}
+
+table {
+    max-width: 50%;
+    width: 50%;
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+        background: var(--zebra-striping-tabelle);
+    }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /*Make table larger*/
+    table {
+        max-width: 90%;
+        width: 90%;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr, th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid var(--colore-bordo); }
+
+    td {
+        /* Behave  like a "row" */
+        border-bottom: 1px solid var(--colore-bordo);
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "Materia"; }
+    td:nth-of-type(2):before { content: "Compito"; }
+    td:nth-of-type(3):before { content: "Data consegna"; }
+    td:nth-of-type(4):before { content: "Fatto?"; }
+
+    #modalInserimento {
+        transform: scale(0);
+        width: 90%;
+        z-index: 5;
+        position: fixed;
+        top: auto;
+        bottom: 6rem;
+        left: 5%;
+        transition: all 0.5s;
+        background-color: var(--colore-sfondo);
+        border-radius: 10px;
+        padding: 1rem;
+        border: 1px solid var(--colore-tema-hermes);
+        box-sizing: border-box;
+    }
+}

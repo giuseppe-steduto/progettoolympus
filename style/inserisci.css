@@ -1,0 +1,58 @@
+@import "base.css";
+
+h1 {
+    margin-top: 4rem;
+    color: var(--colore-intestazioni);
+    text-align: center;
+}
+
+form, #divInserimentoFile {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+    padding: 1.5rem 2rem 0 2rem;
+    background-color: var(--colore-elemento-sopraelevato);
+}
+#divInserimentoFile {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+#divInserimentoFile h3 {
+    color: var(--colore-testo);
+}
+#divInserimentoFile input {
+    background-color: transparent !important;
+}
+
+form input[type="text"], textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
+}
+
+progress {
+    width: 100%;
+}
+
+button#bottone_invia {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--colore-tema);
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 800px)  { /*Per telefono*/
+    form, #divInserimentoFile {
+        max-width: 90%;
+    }
+}

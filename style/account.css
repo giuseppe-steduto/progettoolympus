@@ -1,0 +1,130 @@
+@import "base.css";
+
+* {
+    font-family: Open Sans;
+    color: white;
+}
+
+body {
+    background-color: var(--colore-sfondo-account);
+    margin: 0;
+}
+
+form {
+    max-width: 30%;
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white !important;
+    border-radius: 5px;
+}
+form input:focus {
+    background-color: var(--colore-sfondo-account-input);
+}
+
+div.wrapperCheckbox {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.wrapperCheckbox label {
+    display: block;
+    padding: 12px 0 12px 48px;
+}
+.wrapperCheckbox label {
+    display: block;
+    padding: 0px 0 12px 30px;
+}
+/*style and hide original checkbox*/
+.wrapperCheckbox input {
+    height: 20px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+/*position new box*/
+.wrapperCheckbox label::before {
+    border: 2px solid;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+/*create check symbol with pseudo element*/
+.wrapperCheckbox label::after {
+    content: "";
+    border: 4px solid white;
+    border-left: 0;
+    border-top: 0;
+    height: 10px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    transform: rotate(45deg);
+    transition: opacity 0.2s ease-in-out;
+    width: 6px;
+}
+/*reveal check for 'on' state*/
+label.checkboxON::after {
+    opacity: 1 !important;
+}
+
+#cambiaPassword, #eliminaAccount {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+div.bottoniSalvaAnnullaContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+form input[type="submit"] {
+    margin-right: 0.5rem;
+    border: 0;
+    outline: 0;
+    background-color: white;
+    color: var(--colore-sfondo-account);
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+form div.annullaCambiamenti {
+    margin-left: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    text-align: center;
+    outline: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        max-width: 90%;
+    }
+}

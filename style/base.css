@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+    font-family: "Open Sans";
+}
+
+html {
+    --colore-tema: dodgerblue;
+    --colore-tema-delphi: #ff5050;
+    --colore-tema-athena: dodgerblue;
+    --colore-tema-hermes: #1dd767;
+    --colore-testo: black;
+    --colore-testo-pulsanti: white;
+    --hover-tabelle: #f1f1f1;
+    --zebra-striping-tabelle: #eee;
+    --colore-bordo: #c6c6c6;
+    --colore-intestazioni: black;
+    --colore-sfondo: white;
+    --colore-sfondo-input: white;
+    --colore-sfondo-account: dodgerblue;
+    --colore-sfondo-account-input: #196cc2;
+    --colore-disabilitato: grey;
+    --verde: #00b400;
+    --rosso: #c40101;
+    --colore-link: blue;
+    --colore-link-visitato: purple;
+    --colore-elemento-sopraelevato: #eee;
+}
+html[data-theme="dark"] {
+    --colore-tema: #57acff;
+    --colore-testo: #939393;
+    --hover-tabelle: #202020;
+    --zebra-striping-tabelle: #202020;
+    --colore-bordo: #666666;
+    --colore-intestazioni: #ffffff;
+    --colore-sfondo: #121212;
+    --colore-sfondo-input: #202020;
+    --colore-sfondo-account: #121212;
+    --colore-sfondo-account-input: #202020;
+    --colore-disabilitato: grey;
+    --verde: #76ff76;
+    --rosso: #ff5151;
+    --colore-link: #86cfff;
+    --colore-link-visitato: #6aafd4;
+    --colore-elemento-sopraelevato: #303030;
+}
+
+/*Colori NAVBAR per i diversi progetti*/
+html[data-settore="athena"] nav {
+    background-color: var(--colore-tema-athena);
+}
+html[data-settore="athena"] nav button {
+    color: var(--colore-tema-athena);
+}
+
+html[data-settore="delphi"] nav {
+    background-color: var(--colore-tema-delphi);
+}
+html[data-settore="delphi"] nav button {
+    color: var(--colore-tema-delphi);
+}
+
+html[data-settore="hermes"] nav {
+    background-color: var(--colore-tema-hermes);
+}
+html[data-settore="hermes"] nav button {
+    color: var(--colore-tema-hermes);
+}
+
+html[data-settore="amministrazione"] nav {
+    background-color: var(--colore-tema);
+}
+html[data-settore="amministrazione"] nav button {
+    color: var(--colore-tema);
+}
+
+body {
+    background-color: var(--colore-sfondo);
+}
+
+nav {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: right;
+    z-index: 5;
+}
+
+nav button {
+    border: 0;
+    background-color: #eee;
+    outline: 0;
+}
+nav a#paginaIndietro {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+nav a#paginaIndietro span, nav span.material-icons {
+    font-size: 1.5rem;
+    color: white;
+    box-sizing: border-box;
+}
+
+#nomeutente, #logoutButton {
+    padding: 0 0.5rem 0 0.5rem;
+}
+#nomeutente {color: white; text-decoration:  underline; cursor: pointer;}
+#logoutButton {margin-right: 2rem;}
+
+/*Bottone "Torna all'olimpo" */
+div#tornaAllOlimpo {
+    position: fixed;
+    left: 5vw;
+    transform: rotate(1080deg);
+    box-sizing: border-box;
+    bottom: 5vw;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--colore-sfondo-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+html[data-settore="amministrazione"] div#tornaAllOlimpo {border: 2px solid var(--colore-tema);}
+html[data-settore="amministrazione"] div#tornaAllOlimpo span {color: var(--colore-tema);}
+html[data-settore="athena"] div#tornaAllOlimpo {border: 2px solid var(--colore-tema-athena);}
+html[data-settore="athena"] div#tornaAllOlimpo span {color: var(--colore-tema-athena);}
+html[data-settore="hermes"] div#tornaAllOlimpo {border: 2px solid var(--colore-tema-hermes);}
+html[data-settore="hermes"] div#tornaAllOlimpo span {color: var(--colore-tema-hermes);}
+html[data-settore="delphi"] div#tornaAllOlimpo {border: 2px solid var(--colore-tema-delphi);}
+html[data-settore="delphi"] div#tornaAllOlimpo span {color: var(--colore-tema-delphi);}
+
+div#tornaAllOlimpo span {
+    font-size: 2rem;
+}
+
+table {
+    width: auto;
+    margin: 0 auto;
+    max-width: 80%;
+    border-collapse: collapse;
+    color: var(--colore-testo);
+}
+
+a {color: var(--colore-link);}
+a:visited {color: var(--colore-link-visitato);}
+
+table, td, th {
+  border: 1px solid var(--colore-bordo);
+}
+
+td, th {
+    padding: 0.2rem;
+}
+
+th {background-color: var(--zebra-striping-tabelle);}
+
+tr:hover {
+    background-color: var(--hover-tabelle);
+}
+
+form {
+    color: var(--colore-testo);
+    background-color: var(--colore-elemento-sopraelevato);
+}
+
+form input[type="text"] {
+    border: 1px solid var(--colore-bordo);
+    outline: 0;
+}
+
+input, select, textarea {
+    background-color: var(--colore-sfondo-input);
+    color: var(--colore-testo);
+}

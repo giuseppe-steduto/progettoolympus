@@ -1,0 +1,166 @@
+@import "base.css";
+
+#collegamentoAppunti {
+    display: block;
+    margin: 0 auto;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+
+    padding: 2rem;
+    background-color: var(--colore-elemento-sopraelevato);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+form input[type="submit"] {
+    margin-top: 0.3rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--colore-tema);
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+form input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+form ~ p { /*Paragrafo "Numero risultati"*/
+    color: var(--colore-testo);
+}
+
+td span.material-icons, a span.material-icons {
+    color: var(--colore-tema);
+    cursor: pointer;
+}
+
+div#GoToTop {
+    position: fixed;
+    right: -5rem;
+    transform: rotate(1080deg);
+    box-sizing: border-box;
+    bottom: 5vw;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid var(--colore-tema);
+    border-radius: 1.5rem;
+    background-color: var(--colore-sfondo-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+div#GoToTop span {
+    font-size: 2.5rem;
+    color: var(--colore-tema);
+}
+
+div#collegamentoDiario {
+    width: 7rem;
+    background-color: var(--colore-tema);
+    font-size: 1.5rem;
+    padding: 1rem;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topright: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    top: 15vh;
+    left: -5.5rem;
+    display: flex;
+    color: var(--colore-testo-pulsanti);
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+div#collegamentoDiario:hover {
+    left: -1px;
+}
+div#collegamentoDiario p {
+    margin: 0;
+}
+div#collegamentoDiario > span.material-icons {
+    font-size: 2rem;
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+    form {
+        max-width: 90%;
+    }
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+      background: var(--zebra-striping-tabelle);
+    }
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+    /*Make table larger*/
+    table {
+        max-width: 90%;
+    }
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr, th {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid var(--colore-bordo); }
+
+	td {
+		/* Behave  like a "row" */
+		border-bottom: 1px solid var(--colore-bordo);
+		position: relative;
+		padding-left: 50%;
+        min-height: 1.5rem;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Titolo"; }
+	td:nth-of-type(2):before { content: "Materia"; }
+	td:nth-of-type(3):before { content: "Autore"; }
+	td:nth-of-type(4):before { content: "Data"; }
+    td:nth-of-type(5):before { content: "Macroaree"; }
+    td:nth-of-type(6):before { content: "Azioni"; }
+	td:nth-of-type(7):before { content: "Download"; }
+}
